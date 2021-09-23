@@ -1,0 +1,84 @@
+
+$primary:#FFCD1C; 
+$deep-primary: #F1C7BA;
+$light-primary: #FCEFEB;
+$lighter-primary: #F7F5F5;
+$dark:#333333; 
+$gray:#8f8f8f; 
+$light-gray:#b9b9b9;
+$lighter-gray:#bdbdbd;
+$dark-black:#424453;
+$warning: #e56c25;
+$purple:#bb6bd9;
+// colors
+$light:#FAF9F9;
+$lighter-light:#EAEEF3;
+$transparent: transparent;
+$green:#A2CE3B;
+$deep-green:#219653;
+$red:#333333;
+$deep-red:#333333;
+$white:#ffffff;  
+$black:#000; 
+
+// Font-Size
+$base-font-size: 1rem;
+
+// Line-Height
+$base-line-height: 1.8;
+
+// Breakpoints
+$bp-xxsmall: 430px; // 430px
+$bp-xsmall: 576px; // 576px
+$bp-small: 768px; // 768px
+$bp-xmedium: 992px; // 992px
+$bp-medium: 1024px; // 1024px
+$bp-large: 1200px; // 1200px
+$bp-xlarge: 1366px; // 1366px
+$bp-xxlarge: 1440px; // 1440px
+$bp-xxxlarge: 1600.98px; // 1600px
+$bp-fullhd: 1920px; // 1920px
+$bp-2k: 2048px; // 1920px
+$bp-4k: 3840px; // 3840px
+
+$mbp-xxsmall: 429.98px; // 429.98px
+$mbp-xsmall: 575.98px; // 575.98px
+$mbp-small: 767.98px; // 768.98px
+$mbp-xmedium: 991.98px; // 991.98px
+$mbp-medium: 1023.98px; // 1023.99px
+$mbp-large: 1199.98px; // 1199.98px
+$mbp-xlarge: 1365.98px; // 1365.98px
+$mbp-xxlarge: 1439.98px; // 1439.98px
+$mbp-xxxlarge: 1600px; // 1600pxpx
+$mbp-fullhd: 1919.98px; // 1919.98px
+$mbp-2k: 2047.98px; // 2047.98px
+$mbp-4k: 3839.98px; // 3839.98px
+
+// Media Queries
+$mq-xxsmall: "(min-width: #{$bp-xxsmall})";// 420px
+$mq-xsmall: "(min-width: #{$bp-xsmall})";// 576px
+$mq-small: "(min-width: #{$bp-small})";// 768px
+$mq-xmedium: "(min-width: #{$bp-xmedium})";// 992px
+$mq-medium: "(min-width: #{$bp-medium})";// 1024px
+$mq-large: "(min-width: #{$bp-large})";// 1200px
+$mq-xlarge: "(min-width: #{$bp-xlarge})";// 1366px
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";// 1440px
+$mq-xxxlarge: "(min-width: #{$bp-xxxlarge})";// 1680px
+$mq-fullhd: "(min-width: #{$bp-fullhd})";// 1920px
+$mq-2k: "(min-width: #{$bp-2k})";// 2048px
+$mq-4k: "(min-width: #{$bp-4k})";// 3840px
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+
+$mq-max-xxsmall: "(max-width: #{$mbp-xxsmall})";// 420px
+$mq-max-xsmall: "(max-width: #{$mbp-xsmall})";// 576px
+$mq-max-small: "(max-width: #{$mbp-small})";// 768px
+$mq-max-xmedium: "(max-width: #{$mbp-xmedium})";// 992px
+$mq-max-medium: "(max-width: #{$mbp-medium})";// 1024px
+$mq-max-large: "(max-width: #{$mbp-large})";// 1200px
+$mq-max-xlarge: "(max-width: #{$mbp-xlarge})";// 1366px
+$mq-max-xxlarge: "(max-width: #{$mbp-xxlarge})";// 1440px
+$mq-max-xxxlarge: "(max-width: #{$mbp-xxxlarge})";// 1680px
+$mq-max-fullhd: "(max-width: #{$mbp-fullhd})";// 1920px
+$mq-max-2k: "(max-width: #{$mbp-2k})";// 2048px
+$mq-max-4k: "(max-width: #{$mbp-4k})";// 3840px

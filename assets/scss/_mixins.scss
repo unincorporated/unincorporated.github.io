@@ -1,0 +1,327 @@
+// @mixin font-size($n) {
+//   font-size: $n * 1.25em;
+// }
+ 
+// transition time
+@mixin transition1{
+	transition:all 0.25s ease-out;
+	-moz-transition:all 0.25s ease-out;
+	-ms-transition:all 0.25s ease-out;
+	-o-transition:all 0.25s ease-out;
+	-webkit-transition:all 0.25s ease-out;
+}
+@mixin transition2{
+    transition:all 0.5s ease-out;
+    -moz-transition:all 0.5s ease-out;
+    -ms-transition:all 0.5s ease-out;
+    -o-transition:all 0.5s ease-out;
+    -webkit-transition:all 0.5s ease-out;
+}
+@mixin transition3{
+	transition:all 1s ease-out;
+	-moz-transition:all 1s ease-out;
+	-ms-transition:all 1s ease-out;
+	-o-transition:all 1s ease-out;
+	-webkit-transition:all 1s ease-out;
+}             
+// font-awesome
+@mixin font-awesome{
+	display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-family: "Font Awesome 5 Free"; 
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased; 
+} 
+// box-shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+  }
+  
+@mixin gray-img{
+    filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+}
+    
+@mixin gray-invert-img{
+    filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        -o-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+}
+   
+// text-shadow
+@mixin text-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-text-shadow:inset $top $left $blur $color;
+      -moz-text-shadow:inset $top $left $blur $color;
+      text-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-text-shadow: $top $left $blur $color;
+      -moz-text-shadow: $top $left $blur $color;
+      text-shadow: $top $left $blur $color;
+    }
+  }
+  
+  @mixin text-field {
+   display: inline-block;
+    outline: none;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    @include rounded();
+    @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+  }
+  
+  @mixin button($color: $red, $text_color: $white) {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    @include rounded();
+    @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+  
+    color: $text_color !important;
+    font-weight: bold;
+    border: solid 1px darken($color, 18%);
+    background: $color;
+    @include gradient(saturate($color, 15%), darken($color, 15%));
+  
+    &:hover {
+      text-decoration: none;
+      background: saturate($color, 10%);
+      @include gradient(saturate($color, 5%), darken($color, 5%));
+    }
+  
+    &:active {
+      position: relative;
+      top: 1px;
+      color: saturate($color, 15%);
+      @include gradient(saturate($color, 15%), lighten($color, 15%));
+    }
+  }
+  
+  @mixin rounded($radius: 0.5em) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }
+  
+  @mixin gradient($from, $to) {
+    background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background: -moz-linear-gradient(top,  $from, $to);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+  }
+ 
+// theme mixins css ----------------------
+@mixin create-box-shadow($horizontal, $vertical, $blur, $spread, $colour){
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $colour;
+  -moz-box-shadow: $horizontal $vertical $blur $spread $colour;
+  box-shadow: $horizontal $vertical $blur $spread $colour;
+}
+
+@mixin background-gradient($startColor, $endColor, $orientation) {
+    background: $startColor;
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $startColor, $endColor);
+      background: linear-gradient(to bottom, $startColor, $endColor);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $startColor, $endColor);
+      background: linear-gradient(to right, $startColor, $endColor);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $startColor, $endColor);
+      background: radial-gradient(ellipse at center, $startColor, $endColor);
+    }
+}
+
+@mixin size($length){
+  width: $length;
+  height: $length;
+}
+
+@mixin hover(){
+  &:hover, &:active, &:focus{
+    @content;
+  }
+}
+ 
+@mixin first-child() {
+    &:first-of-type {
+      @content;
+    }
+  }
+
+@mixin last-child() {
+    &:last-of-type {
+      @content;
+    }
+  }
+
+@mixin even(){
+    &:nth-child(even) {
+      @content;
+    }
+  }
+
+@mixin odd(){
+  &:nth-child(odd) {
+    @content;
+  }
+}
+// It will select child on given number
+@mixin child($num) {
+    &:nth-child(#{$num}) {
+    @content;
+  }
+}
+
+// It will select from first to last child on given number
+@mixin first($num) {
+
+    @if $num == 1 {
+      &:first-child {
+        @content;
+      }
+    }
+  
+    @else {
+      &:nth-child(-n + #{$num}) {
+        @content;
+      }
+    }
+  }
+
+// It will select from last to first child on given number
+  @mixin last($num) {
+    &:nth-last-child(-n + #{$num}) {
+    @content;
+  }
+}
+
+// The following mixin will allow you to select all elements after a certain number, for this example we're passing in the number 4 which means the mixin will highlight elements 5-10 if there are 10 elemnets to select.
+@mixin after($num) {
+    &:nth-child(n+#{$num + 1}) {
+      @content;
+    }
+  }
+
+// Using this mixin you are able to select a certain element from the end of the group of elements, for this example we're passing in the number 4 again and the mixin will select the 4th element from the end being number 7 if there are 10 elemnets to select.
+  @mixin from-end($num) {
+    &:nth-last-child(#{$num}) {
+    @content;
+    }
+  }
+
+// Select Between Two Elements
+  @mixin between($first,$last) {
+    &:nth-child(n+#{$first}):nth-child(-n+#{$last}) {
+      @content;
+    }
+  }
+
+//Select All But One
+//To select all the elements excluding one use the following mixin, just pass in the number you want to exclude and all will be highlighted apart from this number.
+  @mixin all-but($num) {
+    &:not(:nth-child(#{$num})) {
+      @content;
+    }
+  }
+
+@mixin transform($transform-property) {
+    -ms-transform: $transform-property;
+    -o-transform: $transform-property;
+    -moz-transform: $transform-property;
+    -webkit-transform: $transform-property;
+    transform: $transform-property;
+}
+
+@mixin filter($filter-property){
+    filter: $filter-property;
+    -ms-filter: $filter-property;
+    -webkit-filter: $filter-property;
+    -o-filter: $filter-property;
+    -moz-filter: $filter-property;
+}
+
+@mixin transition($transition-property){
+  transition:$transition-property;
+  -moz-transition:$transition-property;
+  -ms-transition:$transition-property;
+  -o-transition:$transition-property;
+  -webkit-transition:$transition-property;
+}
+
+@mixin rounded($rounded-property){
+  border-radius:$rounded-property;
+  -ms-border-radius:$rounded-property;
+  -o-border-radius:$rounded-property;
+  -webkit-border-radius:$rounded-property;
+  -moz-border-radius:$rounded-property;
+} 
+
+@mixin shadow($shadow-property){
+  box-shadow: $shadow-property;
+  -ms-box-shadow: $shadow-property;
+  -moz-box-shadow: $shadow-property;
+  -o-box-shadow: $shadow-property;
+  -webkit-box-shadow: $shadow-property;
+}  
+
+// horozontal line
+@mixin h-line($width, $height, $bg, $top, $right, $bottom, $left, $translate){
+        width:$width;
+        height:$height;
+        background-color: $bg;
+        @include position(absolute, $top $right $bottom $left);
+        @include transform(translateX($translate));
+        @include transition(all 0.3s);
+}
+
+// verticle line
+@mixin v-line($width, $height, $bg, $top, $right, $bottom, $left, $translate){
+        width:$width;
+        height:$height;
+        background-color: $bg;
+        @include position(absolute, $top $right $bottom $left);
+        @include transform(translateX($translate));
+        @include transition(all 0.3s);
+}
+
+@mixin fixed-top{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+/*--------------------------------------------------------------
+#  Extand
+--------------------------------------------------------------*/
+
+%font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+%font-roboto {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+%img-black-to-white {
+  @include filter(invert(100%) contrast(200%));
+} 

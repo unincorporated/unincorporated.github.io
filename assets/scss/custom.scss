@@ -1,0 +1,201 @@
+
+@import "_common.scss";
+html{
+	scroll-behavior: smooth;
+}  
+
+.autocrive{
+	background-image: url("../images/autocribe-bg.png") ;
+	background-size: 113%; 
+	background-position:78% 0%;
+	@media #{$mq-max-small}{
+		background-size: cover;
+	}
+	.logo{
+		width: 60%;
+		height: auto;
+		margin:1rem auto;
+	}
+	.welcome-text{
+		color: $white;
+		@media #{$mq-medium}{
+			width: 70%;
+		}
+		margin: auto;
+		text-align: center;
+		.h1{
+			font-size: 4vw;
+			font-weight: 400;
+			line-height: 0.9;
+			letter-spacing: 0.2vw;
+		}
+		.display-3{
+			font-size: 9.5vw;
+			line-height: 1.08;
+			@media #{$mq-max-medium}{
+				font-size: 12vw;
+			}
+			font-weight: 500;
+			display: inline-block;
+			border-bottom: 1px solid $white;
+		}
+		.h2{
+			font-size: 2.64vw;
+			font-weight: 400;
+			letter-spacing: 0.29vw;
+		}
+		.text{
+			letter-spacing: 0.11vw;
+			line-height: 1.7;
+			font-size: small;
+		}
+		.signature{
+			letter-spacing: 0.11vw;
+			line-height: 1.9;
+		}
+	}
+	.bg-light-overlay{
+		background-color: rgba($color: $white, $alpha: 0.2);
+		.login-heading{
+			font-size: 4vw;
+			font-weight: 400;
+			line-height: 1;
+			letter-spacing: 0.2vw;
+			@media #{$mq-max-small}{
+				font-size: 6vw;
+			}
+		}
+		.login-form{
+			max-width: 399px;
+			margin: auto;
+			.form-group{
+				.form-control{
+					padding-left:3vw; 
+					padding-left:3vw; 
+					@include rounded(0);
+					height: calc(1.5em + .75rem + 7px);
+					font-style: italic;
+				}
+			}
+			.form-check{
+				input{
+					visibility: hidden;
+				}
+				&-label{
+					font-weight: 400;
+				}
+			}
+			.custom-checkbox{
+				&-label{
+				  // position: relative;
+				  margin-top: 0;
+				  font-weight: 500;
+				  color: $gray;
+				  margin-top: 6px;
+				  &:before{
+					border: 1px solid $light-gray;
+					@include rounded(0);
+					@include position(absolute, 50% null null 0rem);
+					@include transform(translateY(-50%));
+					@include transition1;
+					@include size(18px);
+					display: block;
+					pointer-events: none;
+					content: "";
+					background-color: #fff;
+				  }
+				  &:after{
+					// border: 3px solid $white;
+					background: transparent;
+					content: "\f00c";
+					font-size: 11px;
+					font-weight: 900;
+					-moz-osx-font-smoothing: grayscale;
+					-webkit-font-smoothing: antialiased;
+					display: inline-block;
+					font-style: normal;
+					font-variant: normal;
+					text-rendering: auto;
+					line-height: 1;
+					font-family: 'Font Awesome 5 Free';
+					color: $white;
+					// font-size: 2rem;
+					// opacity: 0;
+					@include position(absolute, 50% null null 4px);
+					@include transform(translateY(-50%));
+				  }
+				}
+				&-input{
+				  display: block!important;
+				  visibility: visible!important;
+				}
+				input:checked + label::before {
+				  background: #EC2224;
+				  border-color: #EC2224;
+				} 
+				// &.checkbox-right{
+				//   padding-left: 0rem;
+				//   padding-right: 1.5rem;
+				//   &-label{
+				// 	&:before{
+				// 	  border: 1px solid $warning;
+				// 	  @include position(absolute, 50% 0rem null null);
+				// 	}
+				// 	&:after{
+				// 	  @include position(absolute, 50% 4px null null);
+				// 	}
+				//   }
+				// }
+			  }
+			  .btn-danger{
+				background: #EC2224;
+				border-color: #EC2224;
+				font-weight: 400;
+			  }
+		}
+		.login-text{
+			font-size: 1.4vw;
+			@media #{$mq-max-medium}{
+				font-size: 2vw;
+				line-height: 1.8;
+			}
+			@media #{$mq-max-small}{
+				font-size: 3vw;
+				line-height: 1.8;
+			}
+			font-weight: 400;
+			.text-danger-link{
+				color: #FF0707;
+				font-style: italic;
+			}
+		} 
+		.login-footer-text{
+			.footer-text{
+				font-size: 2vw;
+				font-weight: 400;
+				letter-spacing: 0.1vw;
+				@media #{$mq-max-medium}{
+					font-size: 2.5vw;
+					line-height: 1.35;
+				}
+				@media #{$mq-max-small}{
+					font-size: 3.5vw;
+					line-height: 1.5;
+				}
+			}
+			.h6{
+				font-size: 1.3vw;
+				font-weight: 400;
+				@media #{$mq-max-medium}{
+					font-size: 2vw;
+					line-height: 1.35;
+				}
+				@media #{$mq-max-small}{
+					font-size: 3vw;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
+
